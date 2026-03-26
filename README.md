@@ -2,6 +2,10 @@
 
 読んだ本のノートを蓄積するリポジトリ。
 
+## 本棚
+
+https://takutori.github.io/wiki-book/
+
 ## フォルダ構成
 
 | フォルダ | 内容 |
