@@ -86,7 +86,7 @@ foreach ($section in @("work", "private")) {
 
 if (-not (Test-Path "docs")) { New-Item -ItemType Directory -Path "docs" | Out-Null }
 
-$json = if ($books.Count -eq 0) { "[]" } else { $books | ConvertTo-Json -Depth 3 }
+$json = if ($books.Count -eq 0) { "[]" } else { ConvertTo-Json -InputObject @($books) -Depth 3 }
 [System.IO.File]::WriteAllText("$root/docs/books.json", $json, [System.Text.Encoding]::UTF8)
 
 Write-Host "Generated docs/books.json ($($books.Count) books)"
