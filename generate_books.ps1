@@ -67,4 +67,4 @@ if (-not (Test-Path "docs")) { New-Item -ItemType Directory -Path "docs" | Out-N
 $json = if ($books.Count -eq 0) { "[]" } else { $books | ConvertTo-Json -Depth 3 }
 [System.IO.File]::WriteAllText("$root/docs/books.json", $json, [System.Text.Encoding]::UTF8)
 
-Write-Host "docs/books.json を生成しました（$($books.Count) 冊）"
+Write-Host "Generated docs/books.json ($($books.Count) books)"
