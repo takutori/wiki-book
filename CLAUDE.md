@@ -33,3 +33,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
    ```powershell
    ./save.ps1
    ```
+
+
+注意事項：<br>
+1. 既に作られた.mdファイルを編集する場合、ただ追記するだけにせず、全体を読んでから冗長なまとめにならないよう気を付けること

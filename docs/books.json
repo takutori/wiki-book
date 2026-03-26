@@ -1,5 +1,14 @@
 ﻿[
     {
+        "title":  "AIエンジニアリング",
+        "author":  "Chip Huyen",
+        "section":  "work",
+        "category":  "AI-Agent",
+        "cover":  "https://raw.githubusercontent.com/takutori/wiki-book/main/work/AI-Agent/images/AIエンジニアリング.jpg",
+        "url":  "https://github.com/takutori/wiki-book/blob/main/work/AI-Agent/AIエンジニアリング.md",
+        "rating":  ""
+    },
+    {
         "title":  "ザ・ゴール",
         "author":  "エリヤフ・ゴールドラット",
         "section":  "work",
