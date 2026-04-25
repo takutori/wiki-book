@@ -9,6 +9,15 @@
         "rating":  "AIシステム設計に直結する最も過小評価されている概念。詳細は章別詳細メモ参照"
     },
     {
+        "title":  "サーバーのしくみ",
+        "author":  "西村",
+        "section":  "work",
+        "category":  "",
+        "cover":  "https://raw.githubusercontent.com/takutori/wiki-book/main/work/CloudInfra/images/サーバーのしくみ.jpg",
+        "url":  "https://github.com/takutori/wiki-book/blob/main/work/CloudInfra/サーバーのしくみ.md",
+        "rating":  ""
+    },
+    {
         "title":  "ザ・ゴール",
         "author":  "エリヤフ・ゴールドラット",
         "section":  "work",
