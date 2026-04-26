@@ -18,6 +18,15 @@
         "rating":  ""
     },
     {
+        "title":  "ネットワークのしくみ",
+        "author":  "Gene",
+        "section":  "work",
+        "category":  "",
+        "cover":  "https://raw.githubusercontent.com/takutori/wiki-book/main/work/CloudInfra/images/ネットワークのしくみ.jpg",
+        "url":  "https://github.com/takutori/wiki-book/blob/main/work/CloudInfra/ネットワークのしくみ.md",
+        "rating":  ""
+    },
+    {
         "title":  "ザ・ゴール",
         "author":  "エリヤフ・ゴールドラット",
         "section":  "work",
