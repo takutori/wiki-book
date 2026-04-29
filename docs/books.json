@@ -27,6 +27,15 @@
         "rating":  ""
     },
     {
+        "title":  "マスタリングTCP/IP 入門編 第6版",
+        "author":  "竹下隆史、村山公保、荒井透",
+        "section":  "work",
+        "category":  "",
+        "cover":  "https://raw.githubusercontent.com/takutori/wiki-book/main/work/CloudInfra/images/マスタリングTCPIP.jpg",
+        "url":  "https://github.com/takutori/wiki-book/blob/main/work/CloudInfra/マスタリングTCPIP.md",
+        "rating":  ""
+    },
+    {
         "title":  "ザ・ゴール",
         "author":  "エリヤフ・ゴールドラット",
         "section":  "work",
