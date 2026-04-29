@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="672" viewBox="0 0 900 672"
+     font-family="'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="672" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="450" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">ネットワーク構成図</text>
+
+  <!-- ══ Internet Zone ══ -->
+  <rect x="8" y="34" width="884" height="92" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="22" y="51" font-size="10" font-weight="bold" fill="#1d4ed8">インターネット（パブリックネットワーク）</text>
+
+  <!-- Cloud shape -->
+  <ellipse cx="450" cy="80" rx="75" ry="25" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+  <ellipse cx="395" cy="85" rx="38" ry="19" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+  <ellipse cx="505" cy="85" rx="38" ry="19" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="450" y="84" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">インターネット</text>
+
+  <!-- CA / PKI badge -->
+  <rect x="758" y="44" width="126" height="36" rx="4" fill="#fef9c3" stroke="#d97706" stroke-width="1"/>
+  <text x="821" y="59" text-anchor="middle" font-size="9" font-weight="bold" fill="#92400e">認証局 CA / PKI</text>
+  <text x="821" y="72" text-anchor="middle" font-size="8" fill="#92400e">公開鍵の正当性を保証</text>
+
+  <!-- Internet → Router line -->
+  <line x1="450" y1="106" x2="450" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- SSL/TLS label -->
+  <rect x="458" y="112" width="78" height="15" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="497" y="123" text-anchor="middle" font-size="9" fill="#92400e">SSL/TLS 暗号化</text>
+
+  <!-- ══ Router ══ -->
+  <rect x="340" y="140" width="220" height="48" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">ルータ</text>
+  <text x="450" y="177" text-anchor="middle" font-size="10" fill="#64748b">NAT / NAPT（アドレス変換・IPの隠蔽）</text>
+
+  <!-- Router → L3 line -->
+  <line x1="450" y1="188" x2="450" y2="222" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="458" y="210" font-size="8" fill="#7c3aed">IP・ICMP・ARP（インターネット層）</text>
+
+  <!-- ══ L3 Switch ══ -->
+  <rect x="320" y="222" width="260" height="48" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="242" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">L3スイッチ</text>
+  <text x="450" y="259" text-anchor="middle" font-size="10" fill="#64748b">ルーティング・VLAN間通信（IPアドレスで転送）</text>
+
+  <!-- L3 → L2A -->
+  <line x1="325" y1="246" x2="175" y2="302" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- L3 → L2B -->
+  <line x1="575" y1="246" x2="725" y2="302" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- TagVLAN label -->
+  <text x="450" y="293" text-anchor="middle" font-size="9" fill="#7c3aed">← タグVLAN（スイッチ間でVLAN識別） →</text>
+
+  <!-- ══ L2 Switch A ══ -->
+  <rect x="60" y="302" width="230" height="48" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="175" y="322" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">L2スイッチ A</text>
+  <text x="175" y="339" text-anchor="middle" font-size="10" fill="#16a34a">VLAN 1（部署A・クライアント側）</text>
+
+  <!-- ══ L2 Switch B ══ -->
+  <rect x="610" y="302" width="230" height="48" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1.5"/>
+  <text x="725" y="322" text-anchor="middle" font-size="12" font-weight="bold" fill="#713f12">L2スイッチ B</text>
+  <text x="725" y="339" text-anchor="middle" font-size="10" fill="#a16207">VLAN 2（部署B・サーバ側）</text>
+
+  <!-- MAC address annotation -->
+  <text x="175" y="361" text-anchor="middle" font-size="8" fill="#64748b">MACアドレスで転送（NI層）</text>
+  <text x="725" y="361" text-anchor="middle" font-size="8" fill="#64748b">MACアドレスで転送（NI層）</text>
+
+  <!-- L2A → devices lines -->
+  <line x1="100" y1="350" x2="80"  y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="175" y1="350" x2="175" y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="250" y1="350" x2="270" y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+
+  <!-- PC 1 -->
+  <rect x="44" y="397" width="72" height="44" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="80" y="415" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">PC</text>
+  <text x="80" y="430" text-anchor="middle" font-size="9" fill="#64748b">クライアント</text>
+
+  <!-- WiFi AP -->
+  <ellipse cx="175" cy="417" rx="32" ry="20" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+  <text x="175" y="414" text-anchor="middle" font-size="10" fill="#0369a1">WiFi AP</text>
+  <text x="175" y="426" text-anchor="middle" font-size="8" fill="#0284c7">無線LAN</text>
+
+  <!-- WiFi AP → Smartphone -->
+  <line x1="175" y1="437" x2="175" y2="469" stroke="#0284c7" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="152" y="469" width="46" height="56" rx="5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="175" y="492" text-anchor="middle" font-size="10" fill="#0369a1">スマホ</text>
+  <text x="175" y="504" text-anchor="middle" font-size="8" fill="#0284c7">WiFi</text>
+
+  <!-- PC 2 -->
+  <rect x="234" y="397" width="72" height="44" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="270" y="415" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">PC</text>
+  <text x="270" y="430" text-anchor="middle" font-size="9" fill="#64748b">クライアント</text>
+
+  <!-- L2B → servers lines -->
+  <line x1="655" y1="350" x2="640" y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="725" y1="350" x2="725" y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="795" y1="350" x2="810" y2="397" stroke="#94a3b8" stroke-width="1.2"/>
+
+  <!-- DNS Server -->
+  <rect x="604" y="397" width="72" height="44" rx="4" fill="#fdf2f8" stroke="#d946ef" stroke-width="1"/>
+  <text x="640" y="415" text-anchor="middle" font-size="10" font-weight="bold" fill="#701a75">DNS</text>
+  <text x="640" y="429" text-anchor="middle" font-size="9" fill="#86198f">名前解決</text>
+
+  <!-- DHCP Server -->
+  <rect x="689" y="397" width="72" height="44" rx="4" fill="#fdf2f8" stroke="#d946ef" stroke-width="1"/>
+  <text x="725" y="415" text-anchor="middle" font-size="10" font-weight="bold" fill="#701a75">DHCP</text>
+  <text x="725" y="429" text-anchor="middle" font-size="9" fill="#86198f">IP自動配布</text>
+
+  <!-- Web Server -->
+  <rect x="774" y="397" width="72" height="44" rx="4" fill="#fdf2f8" stroke="#d946ef" stroke-width="1"/>
+  <text x="810" y="415" text-anchor="middle" font-size="10" font-weight="bold" fill="#701a75">Web</text>
+  <text x="810" y="429" text-anchor="middle" font-size="9" fill="#86198f">HTTP / HTTPS</text>
+  <text x="810" y="452" text-anchor="middle" font-size="8" fill="#94a3b8">ポート 443</text>
+
+  <!-- ══ TCP/IP 4-layer legend (center gap) ══ -->
+  <rect x="340" y="397" width="256" height="108" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="468" y="413" text-anchor="middle" font-size="10" font-weight="bold" fill="#475569">TCP/IP 4層モデル</text>
+  <rect x="348" y="418" width="240" height="18" rx="2" fill="#fce7f3"/>
+  <text x="468" y="431" text-anchor="middle" font-size="9" fill="#1e293b">④ アプリケーション層（HTTP, DNS, SMTP, DHCP）</text>
+  <rect x="348" y="438" width="240" height="18" rx="2" fill="#dbeafe"/>
+  <text x="468" y="451" text-anchor="middle" font-size="9" fill="#1e293b">③ トランスポート層（TCP / UDP・ポート番号）</text>
+  <rect x="348" y="458" width="240" height="18" rx="2" fill="#dcfce7"/>
+  <text x="468" y="471" text-anchor="middle" font-size="9" fill="#1e293b">② インターネット層（IP, ICMP, ARP）</text>
+  <rect x="348" y="478" width="240" height="18" rx="2" fill="#fef9c3"/>
+  <text x="468" y="491" text-anchor="middle" font-size="9" fill="#1e293b">① NI層（Ethernet, WiFi・MACアドレス）</text>
+
+  <!-- ══ VPN Section ══ -->
+  <rect x="8" y="542" width="884" height="122" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="22" y="560" font-size="10" font-weight="bold" fill="#15803d">インターネットVPN（拠点間通信）</text>
+
+  <!-- Branch A -->
+  <rect x="20" y="572" width="100" height="44" rx="4" fill="#ffffff" stroke="#64748b" stroke-width="1"/>
+  <text x="70" y="590" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e293b">拠点 A</text>
+  <text x="70" y="604" text-anchor="middle" font-size="9" fill="#64748b">VPNルータ</text>
+
+  <!-- Tunnel dashed line -->
+  <line x1="120" y1="594" x2="780" y2="594" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="12,6"/>
+  <rect x="308" y="578" width="284" height="30" rx="4" fill="#dcfce7" stroke="#4ade80" stroke-width="1"/>
+  <text x="450" y="593" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">トンネリング</text>
+  <text x="450" y="605" text-anchor="middle" font-size="9" fill="#166534">暗号化（共通鍵）+ ルーティング</text>
+
+  <!-- Branch B -->
+  <rect x="780" y="572" width="100" height="44" rx="4" fill="#ffffff" stroke="#64748b" stroke-width="1"/>
+  <text x="830" y="590" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e293b">拠点 B</text>
+  <text x="830" y="604" text-anchor="middle" font-size="9" fill="#64748b">VPNルータ</text>
+
+  <!-- Bottom summary bar -->
+  <rect x="20" y="624" width="860" height="32" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="450" y="637" text-anchor="middle" font-size="9" fill="#475569">暗号化：共通鍵（AES）と公開鍵（RSA・楕円曲線）のハイブリッド。鍵交換に公開鍵、データ通信に共通鍵を使用</text>
+  <text x="450" y="650" text-anchor="middle" font-size="9" fill="#475569">ユニキャスト / ブロードキャスト / マルチキャスト　｜　サブネットマスク・ネットワークアドレス　｜　ARP：IP→MAC解決　｜　ICMP：エラー通知・ping</text>
+
+</svg>
